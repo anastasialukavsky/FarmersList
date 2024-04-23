@@ -13,6 +13,14 @@ class Cart{
             this.total -=  removeProduct.price
         }
     }
+    getTotal(){
+        return this.products.reduce(total, product => total + product.price, 0)
+    }
+    clear(){
+        this.products = []
+        this.total = 0
+    }
 }
+
 
 module.exports = Cart
